@@ -1,7 +1,5 @@
 const express = require('express');
 const app = express();
-const productRoute = require('./api/routes/product');
-const userRoute = require('./api/routes/user');
 const categorypath = require('./api/routes/category')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -31,8 +29,6 @@ app.use(fileUpload({
 
 app.use(cors());
 
-app.use('/product',productRoute);
-app.use('/user',userRoute);
 app.use('/category',categorypath);
 
 app.get('*',(req,res,next)=>{
